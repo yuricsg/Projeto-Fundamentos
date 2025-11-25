@@ -1,0 +1,22 @@
+version: "3.9"
+
+networks:
+  minha-rede-customizada:
+    driver: bridge
+
+services:
+  server:
+    build: ./server
+    container_name: servidor-web
+    networks:
+      - minha-rede-customizada
+    ports:
+      - "8080:8080"  # opcional: expõe para acesso via navegador do host
+
+  client:
+    build: ./client
+    container_name: cliente-http
+    networks:
+      - minha-rede-customizada
+    depends_on:
+      - server
