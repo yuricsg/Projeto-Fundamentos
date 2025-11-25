@@ -1,0 +1,32 @@
+version: "3.9"
+
+services:
+  service-users:
+    build: ./service-users
+    container_name: desafio5-service-users
+    networks:
+      - desafio5-net
+
+  service-orders:
+    build: ./service-orders
+    container_name: desafio5-service-orders
+    networks:
+      - desafio5-net
+
+  gateway:
+    build: ./gateway
+    container_name: desafio5-gateway
+    ports:
+      - "7000:7000"
+    environment:
+      USERS_URL: http://service-users:6001
+      ORDERS_URL: http://service-orders:6002
+    depends_on:
+      - service-users
+      - service-orders
+    networks:
+      - desafio5-net
+
+networks:
+  desafio5-net:
+    driver: bridge
