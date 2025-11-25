@@ -77,3 +77,11 @@ A resposta JSON mostra:
 - `web` → `db`: via hostname `db`, porta 5432, usando `psycopg2`.
 - `web` → `cache`: via hostname `cache`, porta 6379, usando a biblioteca `redis`.
 - Todos conectados na rede interna `desafio3-net`.
+
+## Prints dos resultados:
+![1](https://github.com/user-attachments/assets/2dc8daf5-f4b3-4baf-b449-a01b5e0f92eb)
+
+![2](https://github.com/user-attachments/assets/6f73c5c3-dac2-4a7b-b130-5bf0e42bee55)
+
+![3](https://github.com/user-attachments/assets/914823a9-a0fa-46b9-b25d-16fcd31ab29c)
+
